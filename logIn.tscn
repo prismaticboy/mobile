@@ -1,0 +1,53 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://mainButton.tres" type="Theme" id=1]
+[ext_resource path="res://NotoSansSC-Medium.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://logIn.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=2]
+size = 64
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.317647, 0.533333, 0.470588, 1 )
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color( 0.231373, 0.25098, 0.25098, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="Theme" id=1]
+TextEdit/fonts/font = SubResource( 2 )
+TextEdit/styles/completion = SubResource( 5 )
+TextEdit/styles/focus = SubResource( 5 )
+TextEdit/styles/normal = SubResource( 5 )
+TextEdit/styles/read_only = SubResource( 5 )
+
+[node name="logIn" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+
+[node name="Button" type="Button" parent="."]
+margin_left = 433.0
+margin_top = 236.0
+margin_right = 591.0
+margin_bottom = 360.0
+theme = ExtResource( 1 )
+text = "连接"
+
+[node name="TextEdit" type="TextEdit" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -276.0
+margin_top = 100.0
+margin_right = 276.0
+margin_bottom = 208.0
+theme = SubResource( 1 )
+text = "192.168.199.124"
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
