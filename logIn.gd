@@ -17,6 +17,8 @@ remote func start_game(id,sport):
 	print("start_game")
 	if sport==2:
 		get_tree().change_scene("res://Control.tscn")
+	if sport==3:
+		get_tree().change_scene("res://pingpong.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().connect("network_peer_connected",self,"_player_connected")
