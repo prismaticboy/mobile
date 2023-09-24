@@ -10,11 +10,13 @@ onready var text_edit = $TextEdit
 #receive
 remote func connected_client():
 	print("connected")
-remote func start_game(id):
+	
+remote func start_game(id,sport):
 	print(id)
 	AutoLoad.playerID=id
 	print("start_game")
-	get_tree().change_scene("res://Control.tscn")
+	if sport==2:
+		get_tree().change_scene("res://Control.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().connect("network_peer_connected",self,"_player_connected")

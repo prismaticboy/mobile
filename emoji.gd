@@ -15,10 +15,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	var gravity = Input.get_accelerometer()
-	
-	self.position.x=504+(gravity.x*20)
-	self.position.y=304-(gravity.y*20)
-	var input_value = abs(gravity.x)*delta
+	var accelerometer = Input.get_accelerometer()
+	self.position.x=504+(accelerometer.x*20)
+	self.position.y=304-(accelerometer.y*20)
+	var input_value = abs(accelerometer.x)*delta
 	rpc_unreliable("set_position",input_value)
 	pass
