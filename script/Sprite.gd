@@ -1,4 +1,4 @@
-extends Node
+extends Sprite
 
 
 # Declare member variables here. Examples:
@@ -8,14 +8,12 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var ball=str(AutoLoad.playerID)
-	ball=preload("res://cannonBall.tscn").instance()
-	ball.set_name(str(AutoLoad.playerID))
-	ball.set_network_master(AutoLoad.playerID)
-	add_child(ball)
+	
 	pass # Replace with function body.
 
-
+func _process(delta):
+	var acc=Input.get_accelerometer()
+	rpc_id(1,"phone_beat",acc.y)
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass

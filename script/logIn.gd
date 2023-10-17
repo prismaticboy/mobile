@@ -15,10 +15,12 @@ remote func start_game(id,sport):
 	print(id)
 	AutoLoad.playerID=id
 	print("start_game")
+	if sport==1:
+		get_tree().change_scene("res://scene/punch.tscn")
 	if sport==2:
-		get_tree().change_scene("res://Control.tscn")
+		get_tree().change_scene("res://scene/Control.tscn")
 	if sport==3:
-		get_tree().change_scene("res://pingpong.tscn")
+		get_tree().change_scene("res://scene/pingpong.tscn")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_tree().connect("network_peer_connected",self,"_player_connected")

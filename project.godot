@@ -11,12 +11,12 @@ config_version=4
 [application]
 
 config/name="mobile"
-run/main_scene="res://logIn.tscn"
+run/main_scene="res://scene/logIn.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-AutoLoad="*res://autoLoad.gd"
+AutoLoad="*res://script/autoLoad.gd"
 
 [display]
 
